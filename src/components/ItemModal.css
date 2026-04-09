@@ -1,0 +1,21 @@
+.modal__image {
+  width: 100%;
+  height: 498px;
+  object-fit: cover;
+}
+
+.modal__footer {
+  padding: 20px 32px 32px;
+  background-color: #fff;
+}
+
+.modal__caption {
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 12px;
+}
+
+.modal__weather {
+  font-size: 20px;
+  line-height: 24px;
+}

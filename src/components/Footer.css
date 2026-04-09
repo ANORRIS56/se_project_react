@@ -1,0 +1,13 @@
+.footer {
+  max-width: 1360px;
+  margin: 40px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__text,
+.footer__year {
+  font-size: 16px;
+  line-height: 20px;
+}

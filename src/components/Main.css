@@ -1,0 +1,21 @@
+.main {
+  width: 100%;
+}
+
+.main__content {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.main__text {
+  margin-bottom: 16px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.main__cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
