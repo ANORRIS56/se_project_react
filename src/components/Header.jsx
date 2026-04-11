@@ -1,4 +1,3 @@
-import "./Header.css";
 import logo from "../images/wtwr.svg";
 
 function Header({ onAddClick }) {
@@ -10,7 +9,7 @@ function Header({ onAddClick }) {
       </div>
 
       <div className="header__right">
-        <button className="header__add-btn" onClick={onAddClick}>
+        <button className="header__add-btn" type="button" onClick={onAddClick}>
           + Add clothes
         </button>
         <p className="header__username">Terrence Teggene</p>

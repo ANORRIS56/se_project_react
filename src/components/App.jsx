@@ -5,7 +5,15 @@ import Footer from "./Footer";
 import ModalWithForm from "./ModalWithForm";
 import ItemModal from "./ItemModal";
 import { defaultClothingItems } from "../utils/clothingItems";
-import "./App.css";
+
+import "../blocks/App.css";
+import "../blocks/Footer.css";
+import "../blocks/Header.css";
+import "../blocks/ItemCard.css";
+import "../blocks/ItemModal.css";
+import "../blocks/Main.css";
+import "../blocks/ModalWithForm.css";
+import "../blocks/WeatherCard.css";
 
 function App() {
   const [clothingItems] = useState(defaultClothingItems);
@@ -35,7 +43,6 @@ function App() {
       <Header onAddClick={handleOpenAddModal} />
       <Main items={clothingItems} onCardClick={handleCardClick} />
       <Footer />
-
       <ModalWithForm
         isOpen={activeModal === "add-garment"}
         handleSubmit={handleSubmit}

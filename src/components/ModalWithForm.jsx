@@ -1,5 +1,3 @@
-import "./ModalWithForm.css";
-
 function ModalWithForm({
   isOpen,
   children,
@@ -19,12 +17,9 @@ function ModalWithForm({
         >
           ✕
         </button>
-
         <h2 className="modal__title">{title}</h2>
-
         <form onSubmit={handleSubmit} name={name} className="modal__form">
           {children}
-
           <button type="submit" className="modal__submit-btn">
             {buttonText}
           </button>
