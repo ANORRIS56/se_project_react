@@ -7,8 +7,17 @@ function ModalWithForm({
   name,
   onClose,
 }) {
+  function handleOverlayClose(evt) {
+    if (evt.target === evt.currentTarget) {
+      onClose();
+    }
+  }
+
   return (
-    <div className={`modal ${isOpen ? "modal_is-opened" : ""}`}>
+    <div
+      className={`modal ${isOpen ? "modal_is-opened" : ""}`}
+      onMouseDown={handleOverlayClose}
+    >
       <div className="modal__container modal__container_type_form">
         <button
           type="button"

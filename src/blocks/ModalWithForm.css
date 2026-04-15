@@ -66,6 +66,7 @@
 .modal__close-btn_type_preview:hover {
   opacity: 1;
 }
+
 .modal__title {
   margin-bottom: 24px;
   font-size: 16px;
