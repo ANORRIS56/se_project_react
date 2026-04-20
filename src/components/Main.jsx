@@ -12,20 +12,18 @@ function Main({ items, onCardClick, weatherData }) {
 
   return (
     <main className="main">
-      <div className="main__content">
-        <WeatherCard weatherData={weatherData} />
+      <WeatherCard weatherData={weatherData} />
 
-        <p className="main__text">
-          Today is {weatherData.temperature[currentTemperatureUnit]}°
-          {currentTemperatureUnit} / You may want to wear:
-        </p>
+      <p className="main__text">
+        Today is {weatherData.temperature[currentTemperatureUnit]}°
+        {currentTemperatureUnit} / You may want to wear:
+      </p>
 
-        <ul className="main__cards">
-          {filteredItems.map((item) => (
-            <ItemCard key={item._id} item={item} onCardClick={onCardClick} />
-          ))}
-        </ul>
-      </div>
+      <ul className="cards__list">
+        {filteredItems.map((item) => (
+          <ItemCard key={item.id} item={item} onCardClick={onCardClick} />
+        ))}
+      </ul>
     </main>
   );
 }

@@ -1,5 +1,9 @@
-function ItemModal({ card, isOpen, onClose }) {
-  if (!card) return null;
+import "../blocks/ItemModal.css";
+
+function ItemModal({ card, isOpen, onClose, onDelete }) {
+  if (!card) {
+    return null;
+  }
 
   function handleOverlayClose(evt) {
     if (evt.target === evt.currentTarget) {
@@ -20,10 +24,22 @@ function ItemModal({ card, isOpen, onClose }) {
         >
           ✕
         </button>
-        <img src={card.link} alt={card.name} className="modal__image" />
+
+        <img src={card.imageUrl} alt={card.name} className="modal__image" />
+
         <div className="modal__footer">
-          <p className="modal__caption">{card.name}</p>
-          <p className="modal__weather">Weather: {card.weather}</p>
+          <div>
+            <p className="modal__caption">{card.name}</p>
+            <p className="modal__weather">Weather: {card.weather}</p>
+          </div>
+
+          <button
+            type="button"
+            className="modal__delete-btn"
+            onClick={() => onDelete(card)}
+          >
+            Delete item
+          </button>
         </div>
       </div>
     </div>

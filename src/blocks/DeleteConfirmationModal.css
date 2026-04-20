@@ -1,0 +1,28 @@
+.modal__container_type_delete {
+  width: 670px;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.modal__delete-text {
+  margin-bottom: 40px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.modal__delete-confirm-btn {
+  display: block;
+  margin: 0 auto 24px;
+  border: none;
+  background: transparent;
+  color: #ff4d00;
+  cursor: pointer;
+}
+
+.modal__delete-cancel-btn {
+  display: block;
+  margin: 0 auto;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}

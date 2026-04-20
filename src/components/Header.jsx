@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom";
 import logo from "../images/wtwr.svg";
-import avatar from "../images/Terrence.svg";
+import avatar from "../images/terrence.svg";
 import ToggleSwitch from "./ToggleSwitch";
 
 function Header({ onAddClick, weatherData }) {
@@ -12,7 +13,9 @@ function Header({ onAddClick, weatherData }) {
   return (
     <header className="header">
       <div className="header__left">
-        <img src={logo} alt="WTWR logo" className="header__logo" />
+        <Link to="/" className="header__logo-link">
+          <img src={logo} alt="WTWR logo" className="header__logo" />
+        </Link>
         <p className="header__date">
           {dateString}, {weatherData.city || "Loading..."}
         </p>
@@ -25,10 +28,10 @@ function Header({ onAddClick, weatherData }) {
           + Add clothes
         </button>
 
-        <p className="header__username">Terrence Teggene</p>
-
-        {/* ✅ THIS IS THE FIX */}
-        <img src={avatar} alt="User avatar" className="header__avatar" />
+        <Link to="/profile" className="header__profile-link">
+          <p className="header__username">Terrence Teggene</p>
+          <img src={avatar} alt="User avatar" className="header__avatar" />
+        </Link>
       </div>
     </header>
   );
