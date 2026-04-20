@@ -1,23 +1,22 @@
-.sidebar {
+.profile__sidebar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   width: 229px;
   flex-shrink: 0;
 }
 
-.sidebar__user {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.sidebar__avatar {
+.profile__avatar {
   width: 56px;
   height: 56px;
   border-radius: 50%;
+  background-color: #000;
 }
 
-.sidebar__username {
+.profile__name {
+  margin: 0;
   font-size: 20px;
-  line-height: 24px;
+  line-height: 1;
   font-weight: 700;
   white-space: nowrap;
 }

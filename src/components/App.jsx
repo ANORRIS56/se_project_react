@@ -20,6 +20,11 @@ function App() {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [weatherData, setWeatherData] = useState(defaultWeatherData);
 
+  const currentUser = {
+    name: "Terrence Teggene",
+    avatar: "https://i.pravatar.cc/150?img=3",
+  };
+
   useEffect(() => {
     fetchWeather(coordinates, API_KEY)
       .then((data) => {
@@ -151,8 +156,9 @@ function App() {
                 />
                 <Profile
                   items={items}
+                  currentUser={currentUser}
                   onCardClick={handleCardClick}
-                  onAddClick={handleOpenAddModal}
+                  onAddItem={handleOpenAddModal}
                 />
                 <Footer />
               </>
