@@ -13,7 +13,6 @@ function Main({ items, onCardClick, weatherData }) {
   return (
     <main className="main">
       <WeatherCard weatherData={weatherData} />
-
       <p className="main__text">
         Today is {weatherData.temperature[currentTemperatureUnit]}°
         {currentTemperatureUnit} / You may want to wear:
@@ -21,7 +20,8 @@ function Main({ items, onCardClick, weatherData }) {
 
       <ul className="cards__list">
         {filteredItems.map((item) => (
-          <ItemCard key={item.id} item={item} onCardClick={onCardClick} />
+          // ✅ FIXED HERE
+          <ItemCard key={item._id} item={item} onCardClick={onCardClick} />
         ))}
       </ul>
     </main>

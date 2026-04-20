@@ -46,9 +46,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (!activeModal) {
-      return undefined;
-    }
+    if (!activeModal) return;
 
     function handleEscClose(evt) {
       if (evt.key === "Escape") {
@@ -99,15 +97,14 @@ function App() {
       });
   }
 
+  // ✅ FIXED HERE
   function handleDeleteCard() {
-    if (!cardToDelete) {
-      return;
-    }
+    if (!cardToDelete) return;
 
-    deleteItem(cardToDelete.id)
+    deleteItem(cardToDelete._id)
       .then(() => {
         setItems((prevItems) =>
-          prevItems.filter((item) => item.id !== cardToDelete.id),
+          prevItems.filter((item) => item._id !== cardToDelete._id),
         );
         handleCloseModal();
       })
@@ -127,45 +124,38 @@ function App() {
   return (
     <CurrentTemperatureUnitContext.Provider value={contextValue}>
       <div className="page">
+        {/* ✅ HEADER OUTSIDE ROUTES */}
+        <Header onAddClick={handleOpenAddModal} weatherData={weatherData} />
+
         <Routes>
           <Route
             path="/"
             element={
-              <>
-                <Header
-                  onAddClick={handleOpenAddModal}
-                  weatherData={weatherData}
-                />
-                <Main
-                  items={items}
-                  onCardClick={handleCardClick}
-                  weatherData={weatherData}
-                />
-                <Footer />
-              </>
+              <Main
+                items={items}
+                onCardClick={handleCardClick}
+                weatherData={weatherData}
+              />
             }
           />
 
           <Route
             path="/profile"
             element={
-              <>
-                <Header
-                  onAddClick={handleOpenAddModal}
-                  weatherData={weatherData}
-                />
-                <Profile
-                  items={items}
-                  currentUser={currentUser}
-                  onCardClick={handleCardClick}
-                  onAddItem={handleOpenAddModal}
-                />
-                <Footer />
-              </>
+              <Profile
+                items={items}
+                currentUser={currentUser}
+                onCardClick={handleCardClick}
+                onAddItem={handleOpenAddModal}
+              />
             }
           />
         </Routes>
 
+        {/* ✅ FOOTER OUTSIDE ROUTES */}
+        <Footer />
+
+        {/* MODALS */}
         <AddItemModal
           isOpen={activeModal === "add-garment"}
           onAddItem={handleAddItemSubmit}
