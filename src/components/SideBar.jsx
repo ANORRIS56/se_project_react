@@ -1,15 +1,21 @@
 import "../blocks/SideBar.css";
-import terrenceAvatar from "../images/terrence.svg";
 
-function SideBar() {
+function SideBar({ user, onLogout }) {
   return (
     <div className="profile__sidebar">
-      <img
-        src={terrenceAvatar}
-        alt="Terrence Teggene"
-        className="profile__avatar"
-      />
-      <p className="profile__name">Terrence Teggene</p>
+      {user?.avatar ? (
+        <img src={user.avatar} alt={user.name} className="profile__avatar" />
+      ) : (
+        <div className="profile__avatar-placeholder">
+          {user?.name?.[0] || "U"}
+        </div>
+      )}
+
+      <p className="profile__name">{user?.name || "User"}</p>
+
+      <button type="button" className="profile__logout-btn" onClick={onLogout}>
+        Log out
+      </button>
     </div>
   );
 }

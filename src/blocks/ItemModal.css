@@ -57,3 +57,8 @@
 .modal__delete-btn:hover {
   opacity: 0.7;
 }
+.modal__error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}

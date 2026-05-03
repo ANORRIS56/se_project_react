@@ -1,7 +1,7 @@
 import ModalWithForm from "./ModalWithForm";
 import useForm from "../hooks/useForm";
 
-function AddItemModal({ isOpen, onAddItem, onCloseModal }) {
+function AddItemModal({ isOpen, onAddItem, onCloseModal, errorMessage }) {
   const { values, handleChange, resetForm } = useForm({
     name: "",
     imageUrl: "",
@@ -58,6 +58,7 @@ function AddItemModal({ isOpen, onAddItem, onCloseModal }) {
             value="hot"
             checked={values.weather === "hot"}
             onChange={handleChange}
+            required
           />
           Hot
         </label>
@@ -84,6 +85,8 @@ function AddItemModal({ isOpen, onAddItem, onCloseModal }) {
           Cold
         </label>
       </fieldset>
+
+      {errorMessage && <p className="modal__error">{errorMessage}</p>}
     </ModalWithForm>
   );
 }
