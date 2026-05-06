@@ -103,4 +103,4 @@ Andrew Norris
 
 This project is for educational purposes.
 
-The backend for the is project can be found at: https://github.com/ANORRIS56/se_project_express
+The backend for this project can be found at: https://github.com/ANORRIS56/se_project_express
