@@ -30,56 +30,62 @@ function RegisterModal({
       onClose={onClose}
       handleSubmit={handleSubmit}
       buttonText="Sign Up"
+      secondaryButtonText="or Log In"
+      onSecondaryButtonClick={onLoginClick}
     >
-      <input
-        type="text"
-        name="name"
-        placeholder="Name"
-        className="modal__input"
-        value={name}
-        onChange={(evt) => setName(evt.target.value)}
-        required
-      />
+      <label className="modal__label">
+        Name
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          className="modal__input"
+          value={name}
+          onChange={(evt) => setName(evt.target.value)}
+          required
+        />
+      </label>
 
-      <input
-        type="url"
-        name="avatar"
-        placeholder="Avatar URL"
-        className="modal__input"
-        value={avatar}
-        onChange={(evt) => setAvatar(evt.target.value)}
-        required
-      />
+      <label className="modal__label">
+        Avatar URL
+        <input
+          type="url"
+          name="avatar"
+          placeholder="Avatar URL"
+          className="modal__input"
+          value={avatar}
+          onChange={(evt) => setAvatar(evt.target.value)}
+          required
+        />
+      </label>
 
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        className="modal__input"
-        value={email}
-        onChange={(evt) => setEmail(evt.target.value)}
-        required
-      />
+      <label className="modal__label">
+        Email
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          className="modal__input"
+          value={email}
+          onChange={(evt) => setEmail(evt.target.value)}
+          required
+        />
+      </label>
 
-      <input
-        type="password"
-        name="password"
-        placeholder="Password"
-        className="modal__input"
-        value={password}
-        onChange={(evt) => setPassword(evt.target.value)}
-        required
-      />
+      <label className="modal__label">
+        Password
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          className="modal__input"
+          value={password}
+          onChange={(evt) => setPassword(evt.target.value)}
+          required
+        />
+      </label>
 
       {errorMessage && <p className="modal__error">{errorMessage}</p>}
-
-      <button
-        type="button"
-        className="modal__switch-btn"
-        onClick={onLoginClick}
-      >
-        or Log In
-      </button>
     </ModalWithForm>
   );
 }

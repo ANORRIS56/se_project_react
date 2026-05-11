@@ -25,36 +25,36 @@ function LoginModal({
       title="Log In"
       buttonText="Log In"
       name="login"
+      secondaryButtonText="or Sign Up"
+      onSecondaryButtonClick={onRegisterClick}
     >
-      <input
-        className="modal__input"
-        type="email"
-        name="email"
-        placeholder="Email"
-        value={values.email}
-        onChange={handleChange}
-        required
-      />
+      <label className="modal__label">
+        Email
+        <input
+          className="modal__input"
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={values.email}
+          onChange={handleChange}
+          required
+        />
+      </label>
 
-      <input
-        className="modal__input"
-        type="password"
-        name="password"
-        placeholder="Password"
-        value={values.password}
-        onChange={handleChange}
-        required
-      />
+      <label className="modal__label">
+        Password
+        <input
+          className="modal__input"
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={values.password}
+          onChange={handleChange}
+          required
+        />
+      </label>
 
       {errorMessage && <p className="modal__error">{errorMessage}</p>}
-
-      <button
-        type="button"
-        className="modal__switch-btn"
-        onClick={onRegisterClick}
-      >
-        or Sign Up
-      </button>
     </ModalWithForm>
   );
 }

@@ -6,6 +6,8 @@ function ModalWithForm({
   buttonText,
   name,
   onClose,
+  secondaryButtonText,
+  onSecondaryButtonClick,
 }) {
   function handleOverlayClose(evt) {
     if (evt.target === evt.currentTarget) {
@@ -15,7 +17,7 @@ function ModalWithForm({
 
   function onFormSubmit(evt) {
     evt.preventDefault();
-    handleSubmit(evt);
+    handleSubmit();
   }
 
   return (
@@ -34,12 +36,24 @@ function ModalWithForm({
 
         <h2 className="modal__title">{title}</h2>
 
-        <form onSubmit={onFormSubmit} name={name} className="modal__form">
+        <form name={name} className="modal__form" onSubmit={onFormSubmit}>
           {children}
 
-          <button type="submit" className="modal__submit-btn">
-            {buttonText}
-          </button>
+          <div className="modal__button-row">
+            <button type="submit" className="modal__submit-btn">
+              {buttonText}
+            </button>
+
+            {secondaryButtonText && (
+              <button
+                type="button"
+                className="modal__switch-btn"
+                onClick={onSecondaryButtonClick}
+              >
+                {secondaryButtonText}
+              </button>
+            )}
+          </div>
         </form>
       </div>
     </div>
